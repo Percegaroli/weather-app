@@ -4,6 +4,7 @@ const hbs = require( 'hbs')
 const app = express()
 const geocode = require ('./util/geocode')
 const forecast = require ('./util/forecast')
+const port = process.env.PORT || 3000
 //variaveis de caminho
     const caminhoPublic = path.join(__dirname,'../public')
     const caminhoView = path.join(__dirname,'../templates/views')
@@ -65,6 +66,6 @@ const forecast = require ('./util/forecast')
             name:'Bruno'
         })
     })
-app.listen(3000, () =>{
-    console.log('Server up and running')
+app.listen(port, () =>{
+    console.log('Server up and running on port' + port)
 })

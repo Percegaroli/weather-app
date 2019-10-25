@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) =>{
     }
     messageOne.textContent = 'Carregando previsão do tempo'
     messageTwo.textContent = ''
-    fetch('http://localhost:3000/weather?address=' + encodeURIComponent(localizacao)).then( (response) =>{
+    fetch('/weather?address=' + encodeURIComponent(localizacao)).then( (response) =>{
     response.json().then( (data ) =>{
         if (data.error){
             return messageOne.textContent = data.error
